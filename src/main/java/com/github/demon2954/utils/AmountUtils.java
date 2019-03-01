@@ -1,4 +1,4 @@
-package com.zone.utils;
+package com.github.demon2954.utils;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
