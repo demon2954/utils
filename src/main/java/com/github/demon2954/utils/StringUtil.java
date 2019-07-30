@@ -1,9 +1,9 @@
-package com.github.demon2954.utils;
+package zone.excem.util;
 
 import org.apache.commons.lang3.StringUtils;
 
 /**
- * 字符创工具类
+ * 字符串工具类
  * 
  * @author ZoneChan
  * @since 2019-03-18
@@ -48,9 +48,10 @@ public class StringUtil {
 	public static boolean isNotBlank(String str) {
 		return !isBlank(str);
 	}
-	
+
 	/**
 	 * 驼峰式转为下划线
+	 * 
 	 * @return
 	 */
 	public static String camelToUnderline(String camelCaseName) {
@@ -62,6 +63,28 @@ public class StringUtil {
 				if (Character.isUpperCase(ch)) {
 					result.append("_");
 					result.append(Character.toLowerCase(ch));
+				} else {
+					result.append(ch);
+				}
+			}
+		}
+		return result.toString();
+	}
+
+	/**
+	 * 下划线转为驼峰式
+	 * 
+	 * @return
+	 */
+	public static String underlineToCamel(String underlineName) {
+		StringBuilder result = new StringBuilder();
+		if (underlineName != null && underlineName.length() > 0) {
+			result.append(underlineName.substring(0, 1).toUpperCase());
+			for (int i = 1; i < underlineName.length(); i++) {
+				char ch = underlineName.charAt(i);
+				if (ch == '_') {
+					ch = underlineName.charAt(++i);
+					result.append(Character.toUpperCase(ch));
 				} else {
 					result.append(ch);
 				}
