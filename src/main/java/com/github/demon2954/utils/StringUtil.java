@@ -1,4 +1,4 @@
-package zone.excem.util;
+package com.github.demon2954.utils;
 
 import org.apache.commons.lang3.StringUtils;
 
